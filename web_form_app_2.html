@@ -1,0 +1,84 @@
+<!--Just a field for ingredient name, 
+unit, protein, sugar, calories. All html, no js.-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cat Nutrition App</title>
+</head>
+<body>
+    <h1>Cat Nutrition App</h1>
+    <form id="ingredientForm" action="">
+    <table>
+        
+        <tr>
+            <td>Ingredient Name</td>
+            <td><input id="ingredient" type="text" name="ingredient">
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td><select>
+                    <option value="grams">grams (g)</option>
+                    <option value="tablespoons">tabelspoons (Tbsp)</option>
+                    <option value="teaspoons">teaspoons (tsp)</option>
+                    <option value="ounces">ounces (oz)</option>
+                    <option value="cups">cups (C)</option>
+                    <option value="liters">liters (L)</option>
+                    <option value="pints">pints (pt)</option>
+                    <option value="pounds">pounds (lb)</option>
+                    <option value="millileters">millileters (mL)</option>
+                    <option value="quarts">quarts (qt)</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Number of units</td>
+            <td><input type="text" name="units"></td>
+        </tr>
+        <tr>
+            <td>Calories (kcal)</td>
+            <td><input type="text" name="calories"></td>
+        </tr>
+        <tr>
+            <td>Protein (g)</td>
+            <td><input type="text" name="protein"></td>
+        </tr>
+        <tr>
+            <td>Carbs (g)</td>
+            <td><input type="text" name="carbs"></td>
+        </tr>
+        <tr>
+            <td>Fat (g)</td>
+            <td><input type="text" name="fat"></td>
+        </tr>
+        <tr>
+            <td>Sugar (g)</td>
+            <td><input type="text" name="sugar"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" onclick ="displayData()" value="Submit"></td>
+        </tr>
+    
+    </table>
+    </form>
+
+    <label>Nutritional Information:</label>
+    <p id="display"></p>
+
+<script type="text/javascript"></script>
+<script>
+function retrieveData() {
+    var data = document.getElementById("ingredientForm");
+    var toDisplay = "";
+    for (var i = 0; i < data.length-1; i++) {
+        toDisplay += data.elements[i].value + "<br>";
+    }
+    return toDisplay;
+}
+function displayData() {
+    document.getElementById("display").innerHTML = retrieveData();
+}
+</script>
+
+</body>
+
+</HTML>
